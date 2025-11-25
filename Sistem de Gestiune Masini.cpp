@@ -7,7 +7,7 @@ bool integritatePlacuta(string placuta)
 	{
 		if (placuta[0] >= 'A' && placuta[0] <= 'Z')
 		{
-			for (int i = 0; i < placuta.size() - 3; i++)
+			for (int i = 1; i < placuta.size() - 3; i++)
 			{
 				if (!(placuta[i] >= '0' && placuta[i] <= '9'))
 				{
@@ -84,12 +84,14 @@ public:
 	CheiUnice(const CheiUnice& chei)
 	{
 		this->nrSerii = chei.nrSerii;
+		this->serii = new string[this->nrSerii];
 		for (int i = 0; i < this->nrSerii; i++)
 		{
-			this->serii = chei.serii;
+			this->serii[i] = chei.serii[i];
 		}
 
 		this->nrPlacute = chei.nrPlacute;
+		this->placute = new string[this->nrPlacute];
 		for (int i = 0; i < this->nrPlacute; i++)
 		{
 			this->placute[i] = chei.placute[i];
@@ -109,12 +111,14 @@ public:
 			this->nrPlacute = 0;
 
 			this->nrSerii = chei.nrSerii;
+			this->serii = new string[this->nrSerii];
 			for (int i = 0; i < this->nrSerii; i++)
 			{
-				this->serii = chei.serii;
+				this->serii[i] = chei.serii[i];
 			}
 
 			this->nrPlacute = chei.nrPlacute;
+			this->placute = new string[this->nrPlacute];
 			for (int i = 0; i < this->nrPlacute; i++)
 			{
 				this->placute[i] = chei.placute[i];
